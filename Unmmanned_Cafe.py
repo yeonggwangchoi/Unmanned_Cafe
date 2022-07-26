@@ -65,3 +65,4 @@ while True:
     process_order(order)
     
     #영업 종료 기능 추가 할 것
+    #종료 기능 구현
