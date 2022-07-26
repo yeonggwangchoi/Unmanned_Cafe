@@ -59,3 +59,5 @@ while True:
     
     #주문 처리하기
     process_order(order)
+    
+    #영업 종료 기능 추가 할 것
