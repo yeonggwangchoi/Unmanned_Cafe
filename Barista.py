@@ -28,3 +28,5 @@ while True:
         print("망고쥬스를 만들고 있습니다~")
     else:
         print("다시 주문해주세요~")
+        
+        test!!
