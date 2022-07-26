@@ -3,6 +3,10 @@ import sys
 print("Glory coffee에 오신걸 환영합니다.")
 print("메뉴판을 보여드릴까요?")
 menu = input("yes 아니면 no를 입력하세요> ")
+if menu == "yes":
+    print("")
+else:
+    print("")
 
 def show_menu():
     print("==<< 메뉴 >>==")
