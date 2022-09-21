@@ -24,23 +24,23 @@ def get_order():
     if order == "q":
         print("주문이 취소 되었습니다.")
         sys.exit(0)
-    print(order, "번을 주문하셨습니다.")
+    print(order+"번을 주문하셨습니다.")
     return order
 
 def make_americano():
-    print("아메리카노를 만들고 있습니다.")
+    print("아메리카노를 주문하셨습니다.")
     return
 def make_cafelatte():
-    print("카페라떼를 만들고 있습니다.")
+    print("카페라떼를 주문하셨습니다.")
     return
 def make_espresso():
-    print("에스프레소를 만들고 있습니다.")
+    print("에스프레소를 주문하셨습니다.")
     return
 def make_greentee():
-    print("녹차를 만들고 있습니다.")
+    print("녹차를 주문하셨습니다.")
     return
 def make_mangojuice():
-    print("망고쥬스를 만들고 있습니다.")
+    print("망고쥬스를 주문하셨습니다.")
     return
 
 def process_order(order):
@@ -57,23 +57,33 @@ def process_order(order):
     else:
         print("다시 주문해주세요~")
     return
-
+count = 0
 while True:
-    print("주문 하시겠습니까?")
-    first = input("yes 아니면 no를 입력하세요> ")
-    if first == "yes":
-        #메뉴 보여주기
-        print("메뉴판을 보여드겠습니다.")
-        show_menu()
-        #주문 받기
-        order=get_order()
-    
-        #주문 처리하기
-        process_order(order)
+    count = count + 1
+    if count == 1:
+        print("주문 하시겠습니까?")
+        first = input("yes 아니면 no를 입력하세요> ")
+        if first == "yes":
+            #메뉴 보여주기
+            print("메뉴판을 보여드겠습니다.")
+            show_menu()
+            #주문 받기
+            order=get_order()
+            #주문 처리하기
+            process_order(order)
+        elif first == "no":
+            print("주문을 취소합니다.")
+            sys.exit(0)
     else:
-        print("주문을 취소합니다.")
-        sys.exit(0)
-   
-    
-
-    
+        print("추가 주문 하시겠습니까?")
+        first = input("yes 아니면 no를 입력하세요> ")
+        if first == "yes":
+            #메뉴 보여주기
+            show_menu()
+            #주문 받기
+            order=get_order()
+            #주문 처리하기
+            process_order(order)
+        elif first == "no":
+            print("주문을 취소합니다.")
+            sys.exit(0)
